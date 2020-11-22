@@ -1,12 +1,12 @@
-//Loading of base layer from OSM
+// Loading of base layer from OSM
 
 var osm_layer = L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-	attribution: '<a href = "https://areskidrissa.cc" target = "_blank">areskidrissa.cc</a> Map data &copy; <a href="https://www.openstreetmap.org/" target = "_blank">OpenStreetMap</a> contributors, ' +
+	attribution: '<a href = "https://idrissad.github.io" target = "_blank">Idrissa Djepa</a> Map data &copy; Idrissa Djepa and <a href="https://www.openstreetmap.org/" target = "_blank">OpenStreetMap</a> contributors, ' +
 	'<a href="https://creativecommons.org/licenses/by-sa/2.0/" target = "_blank">CC-BY-SA</a>',
 	})
 ;
 
-//Construction des marqueurs points
+// Building of point markers
 
 var pointToLayer = function (feature, latlng) {
 	var myIcon = ""
@@ -24,7 +24,7 @@ var pointToLayer = function (feature, latlng) {
 	return L.marker(latlng, {icon: myIcon})
 };
 
-//Construction des popup
+// Building of popup
 
 var onEachFeature = function (feature, layer) {
 	var popup_content = ""
@@ -38,14 +38,14 @@ var onEachFeature = function (feature, layer) {
 	//console.log(popup_content)
 };
 
-// Passage en vert de chaque objet
+// Make objects green
 
 var style = function(geo) {
 	return {color: "green"}
 };
 
 
-// Construction de mes couches par catégorie avec fonction filter
+// Building of layers by category with filter function
 
 var bars = new L.geoJson(data, {
 	filter: function(feature, layer) {
@@ -125,7 +125,7 @@ var mymap = L.map('mapid', {
 	layers: [bars, urbex, divers, balades, danse, activites, streetfood, restaurants]
 });
 
-// Construction de ma liste de couches
+// Building of my layers list
 
 var overlayMaps = {
 	//"Toutes catégories": toutes_layer,
@@ -139,7 +139,7 @@ var overlayMaps = {
 	"Restaurants": restaurants
 };
 
-// Ajout à la carte du fond de carte et du controle de couches
+// Adding of baselayer and layers control to the map
 
 osm_layer.addTo(mymap);
 L.control.layers(null, overlayMaps, {collapsed: false}).addTo(mymap);
