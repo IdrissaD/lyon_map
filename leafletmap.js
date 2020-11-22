@@ -1,7 +1,7 @@
 // Loading of base layer from OSM
 
 var osm_layer = L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-	attribution: '<a href = "https://idrissad.github.io" target = "_blank">Idrissa Djepa</a> Map data &copy; Idrissa Djepa and <a href="https://www.openstreetmap.org/" target = "_blank">OpenStreetMap</a> contributors, ' +
+	attribution: '<a href = "https://github.com/IdrissaD" target = "_blank">Idrissa Djepa</a> Map data &copy; Idrissa Djepa and <a href="https://www.openstreetmap.org/" target = "_blank">OpenStreetMap</a> contributors, ' +
 	'<a href="https://creativecommons.org/licenses/by-sa/2.0/" target = "_blank">CC-BY-SA</a>',
 	})
 ;
